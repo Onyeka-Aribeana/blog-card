@@ -21,7 +21,7 @@ $color-text: #6c727f;
 @mixin variable-font-size($size) {
   font-size: clamp(
     calc($size * 1.2rem),
-    calc($size * 2vw),
+    calc($size * 2.8vw),
     calc($size * 1.4rem)
   );
 }
