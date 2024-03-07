@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Sora&display=swap");
+
+$color-purple: #883ae1;
+$color-lilac: #e6d6fc;
+$color-white: #ffffff;
+$color-border: #e5eaf0;
+$color-background: #fafaf9;
+$color-title: #20293a;
+$color-text: #6c727f;
+
+@mixin image-reset {
+  vertical-align: middle;
+  width: 100%;
+  //   height: auto;
+  //   font-style: italic;
+  //   background-repeat: no-repeat;
+  //   background-size: cover;
+  //   shape-margin: 1rem;
+}
+
+@mixin variable-font-size($size) {
+  font-size: clamp(
+    calc($size * 1.2rem),
+    calc($size * 2vw),
+    calc($size * 1.4rem)
+  );
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  @include variable-font-size(1);
+  font-family: "Sora", sans-serif;
+
+  background-color: $color-background;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag {
+  @include variable-font-size(0.8);
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.4rem 1.4rem;
+  border-radius: 99em;
+
+  &--design {
+    background-color: $color-lilac;
+    color: $color-purple;
+  }
+}
+
+.card {
+  width: min(38rem, 100% - 2rem);
+  background-color: $color-white;
+  border-radius: 1rem;
+  box-shadow: 0px 30px 100px 0px rgba(17, 23, 41, 0.05);
+
+  &__content,
+  &__details {
+    padding: 1.6rem;
+  }
+
+  &__img {
+    @include image-reset;
+    border-radius: 1.4rem;
+    margin-bottom: 1.6rem;
+  }
+
+  &__title {
+    @include variable-font-size(1.4);
+    color: $color-title;
+    margin: 1.2rem 0 0.6rem;
+  }
+
+  &__description {
+    color: $color-text;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+  }
+
+  &__details {
+    border-top: 1px $color-border solid;
+  }
+
+  &__author {
+    @include variable-font-size(0.8);
+    color: $color-text;
+  }
+}
